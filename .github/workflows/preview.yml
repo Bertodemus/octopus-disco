@@ -29,8 +29,8 @@ jobs:
         uses: rossjrw/pr-preview-action@v1
         with:
           token: ${{ secrets.PRP_TOKEN }}
-          source-dir: ./build/
-          umbrella-dir: pr-preview
+          #   source-dir: ./build/
+          #   umbrella-dir: pr-preview
           action: auto
-        #   preview-branch: main
-        #   source-dir: .
+          preview-branch: gh-pages
+          source-dir: .
