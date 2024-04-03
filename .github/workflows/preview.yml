@@ -24,7 +24,7 @@ jobs:
         if: github.event.action != 'closed'
         run: |
           yarn install
-          yarn build
+          yarn buildPR
 
       - name: Deploy PR preview
         uses: rossjrw/pr-preview-action@v1
@@ -32,6 +32,6 @@ jobs:
           token: ${{ secrets.PRP_TOKEN }}
           # source-dir: ./build/
           # action: auto
+          # umbrella-dir: pr-preview
           preview-branch: gh-pages
           source-dir: ./dist/
-          umbrella-dir: pr-preview
