@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "buildPR": "tsc && vite build --assetsDir=.",
+    "buildPR": "tsc && vite build --assetsDir=..",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
