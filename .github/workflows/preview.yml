@@ -1,18 +1,19 @@
 # .github/workflows/preview.yml
 name: Deploy PR previews
 on:
-  push:
-    branches:
-      - main
   pull_request:
     types:
       - opened
       - synchronize
+
+concurrency: preview-${{ github.ref }}
+
 jobs:
   deploy-preview:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
 
       - name: Run Yarn install
         uses: borales/actions-yarn@v4
@@ -31,6 +32,6 @@ jobs:
           token: ${{ secrets.PRP_TOKEN }}
           #   source-dir: ./build/
           #   umbrella-dir: pr-preview
-          action: auto
+          # action: auto
           preview-branch: gh-pages
-          source-dir: .
+          source-dir: ./dist/
