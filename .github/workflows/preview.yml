@@ -24,7 +24,7 @@ jobs:
         if: github.event.action != 'closed'
         run: |
           yarn install
-          yarn buildPR
+          yarn build
 
       - name: Deploy PR preview
         uses: rossjrw/pr-preview-action@v1
